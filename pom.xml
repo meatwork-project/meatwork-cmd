@@ -45,4 +45,12 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>Meatwork-cmd</name>
+            <url>https://maven.pkg.github.com/meatwork-project/meatwork-cmd</url>
+        </repository>
+    </distributionManagement>
+
 </project>
