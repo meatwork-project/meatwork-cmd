@@ -1,0 +1,4 @@
+--patch-module
+com.meatwork.cmd=_
+--add-reads
+com.meatwork.cmd=ALL-UNNAMED
