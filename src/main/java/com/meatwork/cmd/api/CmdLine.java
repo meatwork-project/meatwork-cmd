@@ -1,4 +1,4 @@
-package com.meatwork.cmd;
+package com.meatwork.cmd.api;
 
 import java.util.concurrent.Callable;
 

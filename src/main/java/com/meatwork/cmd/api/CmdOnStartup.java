@@ -1,7 +1,7 @@
-package com.meatwork.cmd;
+package com.meatwork.cmd.api;
 
-import com.meatwork.tools.api.ApplicationStartup;
-import com.meatwork.tools.di.CDI;
+import com.meatwork.tools.api.service.ApplicationStartup;
+import com.meatwork.tools.api.di.CDI;
 import picocli.CommandLine;
 
 /*
