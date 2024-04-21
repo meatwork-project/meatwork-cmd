@@ -28,7 +28,7 @@
         <dependency>
             <groupId>com.meatwork</groupId>
             <artifactId>meatwork-tools</artifactId>
-            <version>1.1.0-SNAPSHOT</version>
+            <version>${revision}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
@@ -59,7 +59,6 @@
                         <configuration>
                             <file>${project.basedir}/target/meatwork-cmd-${revision}.jar</file>
                             <repositoryId>github</repositoryId>
-                            <url>https://maven.pkg.github.com/meatwork-project/meatwork-cmd</url>
                         </configuration>
                     </execution>
                 </executions>
