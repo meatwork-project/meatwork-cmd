@@ -10,6 +10,7 @@ module com.meatwork.cmd {
 	requires com.meatwork.tools;
 	requires info.picocli;
 	requires com.google.guice;
+	requires org.slf4j;
 
 	uses Module;
 	provides Module with CmdModule;
