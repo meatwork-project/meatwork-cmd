@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import picocli.CommandLine;
 
 import java.util.List;
+import java.util.Set;
 
 /*
  * Copyright (c) 2016 Taliro.
@@ -15,13 +16,13 @@ import java.util.List;
 public class CmdOnStartup implements ApplicationStartup {
 
 	private final CmdLine cmdLine;
-	private final List<SubCmd> subCmdList;
+	private final Set<SubCmd> subCmdList;
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(CmdOnStartup.class);
 
 	@Inject
 	public CmdOnStartup(CmdLine cmdLine,
-	                    List<SubCmd> subCmdList) {
+	                    Set<SubCmd> subCmdList) {
 		this.cmdLine = cmdLine;
 		this.subCmdList = subCmdList;
 	}
