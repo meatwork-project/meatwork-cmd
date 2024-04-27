@@ -1,10 +1,12 @@
 package com.meatwork.cmd.api;
 
+import com.google.inject.Inject;
 import com.meatwork.tools.api.service.ApplicationStartup;
-import com.meatwork.tools.api.di.CDI;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import picocli.CommandLine;
+
+import java.util.List;
 
 /*
  * Copyright (c) 2016 Taliro.
@@ -12,7 +14,17 @@ import picocli.CommandLine;
  */
 public class CmdOnStartup implements ApplicationStartup {
 
+	private final CmdLine cmdLine;
+	private final List<SubCmd> subCmdList;
+
 	private static final Logger LOGGER = LoggerFactory.getLogger(CmdOnStartup.class);
+
+	@Inject
+	public CmdOnStartup(CmdLine cmdLine,
+	                    List<SubCmd> subCmdList) {
+		this.cmdLine = cmdLine;
+		this.subCmdList = subCmdList;
+	}
 
 	@Override
 	public int priority() {
@@ -20,12 +32,23 @@ public class CmdOnStartup implements ApplicationStartup {
 	}
 
 	@Override
-	public void run(String[] args) throws Exception {
+	public void run(String[] args) {
 		if (LOGGER.isDebugEnabled()) {
 			LOGGER.debug("running command line with args {}", String.join(" ", args));
 		}
-		CmdLine cmdLine = CDI.get(CmdLine.class);
-		int exitCode = new CommandLine(cmdLine).execute(args);
+
+		CommandLine commandLine = new CommandLine(cmdLine);
+
+		if(subCmdList != null) {
+			for (SubCmd subCmd : subCmdList) {
+				if (LOGGER.isDebugEnabled()) {
+					LOGGER.debug("sub command founded {}", subCmd.getClass());
+				}
+				commandLine.addSubcommand(subCmd);
+			}
+		}
+
+		int exitCode = commandLine.execute(args);
 		System.exit(exitCode);
 	}
 }
