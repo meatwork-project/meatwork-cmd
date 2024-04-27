@@ -7,7 +7,5 @@ import java.util.concurrent.Callable;
  * All rights reserved.
  */
 public interface SubCmd extends Callable<Integer> {
-	String getModuleInfoName();
-	String getModuleName();
-	String getIconName();
+
 }
