@@ -36,7 +36,7 @@ public final class WriteConsole {
 		);
 	}
 
-	public void encodeAndSend(String string) {
+	public static void encodeAndSend(String string) {
 		String encode = encode(string);
 		send(encode);
 	}
