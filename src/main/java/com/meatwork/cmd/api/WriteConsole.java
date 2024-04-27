@@ -1,6 +1,5 @@
 package com.meatwork.cmd.api;
 
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +9,7 @@ import java.util.List;
  */
 public final class WriteConsole {
 
-	public void response(byte[] bytes) {
+	public static void response(byte[] bytes) {
 		StringBuffer sb = new StringBuffer();
 		for (byte b : bytes) {
 			sb.append(b);
@@ -18,11 +17,11 @@ public final class WriteConsole {
 		System.out.println(sb);
 	}
 
-	public void send(String responseEncoded) {
+	public static void send(String responseEncoded) {
 		System.out.println(responseEncoded);
 	}
 
-	public String encode(String string) {
+	public static String encode(String string) {
 		List<String> result = new ArrayList<>();
 		char[] chars = string.toCharArray();
 		for (char aChar : chars) {
