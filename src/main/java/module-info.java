@@ -1,20 +1,13 @@
-import com.google.inject.Module;
-import com.meatwork.cmd.api.module.CmdModule;
-
 /*
  * Copyright (c) 2016 Taliro.
  * All rights reserved.
  */
 module com.meatwork.cmd {
 
-	requires com.meatwork.tools;
+	requires com.meatwork.core;
 	requires info.picocli;
-	requires com.google.guice;
 	requires org.slf4j;
-
-	uses Module;
-	provides Module with CmdModule;
+	requires jakarta.inject;
 
 	exports com.meatwork.cmd.api;
-
 }

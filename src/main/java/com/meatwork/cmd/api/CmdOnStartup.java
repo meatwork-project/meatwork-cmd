@@ -1,18 +1,19 @@
 package com.meatwork.cmd.api;
 
-import com.google.inject.Inject;
-import com.meatwork.tools.api.service.ApplicationStartup;
+import com.meatwork.core.api.di.Service;
+import com.meatwork.core.api.service.ApplicationStartup;
+import jakarta.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import picocli.CommandLine;
 
-import java.util.List;
 import java.util.Set;
 
 /*
  * Copyright (c) 2016 Taliro.
  * All rights reserved.
  */
+@Service
 public class CmdOnStartup implements ApplicationStartup {
 
 	private final CmdLine cmdLine;

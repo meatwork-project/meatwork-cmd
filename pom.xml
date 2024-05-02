@@ -27,7 +27,7 @@
         </dependency>
         <dependency>
             <groupId>com.meatwork</groupId>
-            <artifactId>meatwork-tools</artifactId>
+            <artifactId>meatwork-core</artifactId>
             <version>${revision}</version>
             <scope>compile</scope>
         </dependency>
