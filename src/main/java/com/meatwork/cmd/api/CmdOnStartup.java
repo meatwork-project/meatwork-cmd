@@ -34,7 +34,7 @@ public class CmdOnStartup implements ApplicationStartup {
 	}
 
 	@Override
-	public void run(String[] args) {
+	public void run(Class<?> applicationCls, String[] args) {
 		if (LOGGER.isDebugEnabled()) {
 			LOGGER.debug("running command line with args {}", String.join(" ", args));
 		}
